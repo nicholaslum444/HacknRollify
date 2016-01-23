@@ -1,4 +1,6 @@
 <?php
+require "ImageResize.php";
+
 $src = imagecreatefrompng('filled_logo.png');
 $dest = imagecreatefromjpeg('ben.jpg');
 
