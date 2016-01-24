@@ -59,14 +59,58 @@ $helper = $fb->getRedirectLoginHelper();
 $permissions = ['public_profile', 'publish_actions'];
 $loginUrl = $helper->getLoginUrl('http://hacknrollify.nuscomputing.tk/getmerolling.php', $permissions);
 
-echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
+echo '<a id="fbLink" href="' . $loginUrl . '"> Log In with Facebook</a>';
 
 ?>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
   <title>HacknRollify</title>
+
+  <style type="text/css">
+    h1 {
+      color: white;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 200;
+      padding-top: 20%;
+    }
+
+    body {
+      background-image: linear-gradient(to right, #dd4b39 0, #720e9e 100%);
+    }
+
+    .pure-button {
+      background: #3B5998;
+      color: white;
+      font-family: "Lucida Grande", "Tahoma";
+      transition: background .4s ease;
+    }
+
+    .transparent {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.1);
+      text-align: center;
+      margin: auto;
+      padding-top: 
+    }
+
+  </style>
 </head>
 <body>
-  <H1>HacknRollify</H1>
+  <div class="transparent">
+    <h1 id="teamName">HacknRollify</h1>
+    <script type="text/javascript">
+    // Shift facebook login link to the bottom of <h1> HacknRollify
+    var link = $("#fbLink")
+    link.detach().insertAfter("#teamName");
+    link.addClass("pure-button").prepend("<i class=\"fa fa-facebook-official\"></i>");
+    </script>
+  </div>
 </body>
 </html>
