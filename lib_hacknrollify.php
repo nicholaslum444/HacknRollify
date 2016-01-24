@@ -22,6 +22,7 @@ function hacknrollify($picfilename) {
 
     // then merge the black and profilepic
     imagecopymerge($profilepic, $blackoverlay, 0, 0, 0, 0, $profilepicWidth, $profilepicHeight, 50);
+    imagedestroy($blackoverlay);
 
     // merge the resized logo
     $logo = resizeImage($logoPicPath, $profilepicWidth - 80, 999999);
@@ -39,8 +40,11 @@ function hacknrollify($picfilename) {
     $mergeSuccess = imagejpeg($profilepic, $editedPicPath);
 
     if (!$mergeSuccess) {
-            die("Image merge failed!");
+            echo("Image merge failed!");
     }
+
+    imagedestroy($profilepic);
+    imagedestroy($logo);
 
     return $editedPicPath;
 }
