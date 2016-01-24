@@ -12,7 +12,11 @@
       color: white;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-weight: 200;
-      padding-top: 20%;
+    }
+
+    p {
+      color: white;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 
     body {
@@ -71,11 +75,12 @@
 
     ?>
 
-      <p>The file <?php echo $img ?> has been uploaded.</p>
-      <p>Enjoy your new picture below!</p>
-      <a class="btn btn-info" href="<?php echo $editedpath ?>" download="<?php echo "hnr_".$img ?>">Download</a>
-      <hr>
-      <img src="<?php echo $editedpath ?>">
+      <p>The file has been uploaded.</p>
+      <p>Enjoy your new cover photo below!</p>
+      <img height="150" width="150" src="<?php echo $editedpath ?>">
+      <p>
+        <a class="pure-button" href="<?php echo $editedpath ?>" download="<?php echo "hnr_".$img ?>">Download</a>
+      </p>
 
     <?php 
 
