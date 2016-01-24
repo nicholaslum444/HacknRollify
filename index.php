@@ -84,7 +84,7 @@
       $helper = $fb->getRedirectLoginHelper();
       $permissions = ['public_profile'];
       $loginUrl = $helper->getLoginUrl('http://hacknrollify.nuscomputing.tk/getmerolling.php', $permissions);
-      echo '<a id="fbLink" href="' . $loginUrl . '">Log in with Facebook!</a>';
+      echo '<a id="fbLink" href="' . $loginUrl . '"> Log in with Facebook!</a>';
     
     } catch(Facebook\Exceptions\FacebookSDKException $e) {
       // echo 'Facebook SDK returned an error: ' . $e->getMessage();
